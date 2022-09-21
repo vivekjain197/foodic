@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "b2338c22-fe58-4a9a-b0e7-16a5db548191",
+		"name": "Foodics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23386123"
+	},
+	"item": [
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Pizza",
+							"type": "text"
+						},
+						{
+							"key": "unit",
+							"value": "20",
+							"description": "quantity",
+							"type": "text"
+						},
+						{
+							"key": "purchase_price",
+							"value": "100",
+							"description": "base price",
+							"type": "text"
+						},
+						{
+							"key": "cash_on_delivery",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "min_qty",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "shipping_cost",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://foodics.local/api/products/add",
+					"protocol": "http",
+					"host": [
+						"foodics",
+						"local"
+					],
+					"path": [
+						"api",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Ingredients",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "cheese",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "50",
+							"description": "gram",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "20",
+							"description": "price of default unit",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://foodics.local/api/products/stock/add",
+					"protocol": "http",
+					"host": [
+						"foodics",
+						"local"
+					],
+					"path": [
+						"api",
+						"products",
+						"stock",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://foodics.local/api/products/home",
+					"protocol": "http",
+					"host": [
+						"foodics",
+						"local"
+					],
+					"path": [
+						"api",
+						"products",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add To Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "product id",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "varient",
+							"value": "5",
+							"description": "Ingeredients ID( Beef)",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "varient_qty",
+							"value": "10",
+							"description": "10g - default",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://foodics.local/api/cart/add",
+					"protocol": "http",
+					"host": [
+						"foodics",
+						"local"
+					],
+					"path": [
+						"api",
+						"cart",
+						"add"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "burger",
+							"disabled": true
+						},
+						{
+							"key": "qty",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "cheese",
+							"value": "20",
+							"description": "cheese 20 gram",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cart info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://foodics.local/api/cart/2",
+					"protocol": "http",
+					"host": [
+						"foodics",
+						"local"
+					],
+					"path": [
+						"api",
+						"cart",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "payment_status",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://foodics.local/api/checkout/place-order",
+					"protocol": "http",
+					"host": [
+						"foodics",
+						"local"
+					],
+					"path": [
+						"api",
+						"checkout",
+						"place-order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
